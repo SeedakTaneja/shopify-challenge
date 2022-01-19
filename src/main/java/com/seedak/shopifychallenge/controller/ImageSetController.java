@@ -105,7 +105,6 @@ public class ImageSetController {
         response.setContentType("image/jpg");
         response.setContentType("image/png");
         response.setContentType("image/gif");
-//        response.setContentType("image/jpeg, image/jpg, image/png, image/gif");
         response.getOutputStream().write(imageSet.get().getImage());
         response.getOutputStream().close();
     }

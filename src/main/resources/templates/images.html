@@ -27,10 +27,8 @@
     <th>Action</th>
   </tr>
   </thead>
-<!--  th:with="count=0"-->
   <tbody>
   <tr th:each = "imageSet, hh : ${images}">
-<!--    <td th:with="count=${count + 1}" th:text="${count}"></td>-->
     <td th:text="${imageSet.id}"></td>
     <td th:text="${imageSet.name}"></td>
     <td><img th:src="@{${'/image/display/'+ imageSet.id}}"
@@ -38,13 +36,12 @@
     <td th:text="${imageSet.description}"></td>
     <td th:text="${imageSet.price}"></td>
     <td th:text="${#dates.format(imageSet.createDate, 'dd-MMM-yyyy')}"></td>
-    <td><a th:href="@{/image/imageDetails(id=${imageSet.id})}" class="btn btn-info text-right" target="_blank">View</a></td>
-      <td><a th:href="@{/image/delete/{id}(id=${imageSet.id})}" class="btn btn-info text-right" target="_blank">Delete</a></td>
+    <td><a th:href="@{/image/imageDetails(id=${imageSet.id})}" class="btn btn-info text-right" target="_blank">View</a><br><br>
+        <a th:href="@{/image/delete/{id}(id=${imageSet.id})}" class="btn btn-info text-right" target="_blank">Delete</a>
+    </td>
   </tr>
   </tbody>
 </table>
-
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap.min.js"></script>
