@@ -21,3 +21,4 @@ https://github.com/SeedakTaneja/shopify-challenge/issues/1#issue-1108432720
 7. To search for an image, you can use the searchbar to search on the basis of any attribute of the image (Name, description, Price).
 8. To view all image details click in view.
 9. To delete an image click on delete.
+![image](https://user-images.githubusercontent.com/97976798/150201157-efec74a4-371c-4bc3-a676-24484aecc948.png)
