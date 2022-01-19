@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <title>PixelTrice</title>
+  <title>Image Repo App</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -10,7 +10,7 @@
 </head>
 <body>
 <br>
-<h1 class="text-center">Spring Boot Image Gallery Application
+<h1 class="text-center">Image Repo App
   <a href="/home" class="btn btn-danger text-right">Go Home</a>
 </h1>
 <br><br>
@@ -27,9 +27,11 @@
     <th>Action</th>
   </tr>
   </thead>
-  <tbody th:with="count=0">
+<!--  th:with="count=0"-->
+  <tbody>
   <tr th:each = "imageSet, hh : ${images}">
-    <td th:with="count=${count + 1}" th:text="${count}"></td>
+<!--    <td th:with="count=${count + 1}" th:text="${count}"></td>-->
+    <td th:text="${imageSet.id}"></td>
     <td th:text="${imageSet.name}"></td>
     <td><img th:src="@{${'/image/display/'+ imageSet.id}}"
              class="card img-fluid" style="width:300px" alt=""/></td>
@@ -37,6 +39,7 @@
     <td th:text="${imageSet.price}"></td>
     <td th:text="${#dates.format(imageSet.createDate, 'dd-MMM-yyyy')}"></td>
     <td><a th:href="@{/image/imageDetails(id=${imageSet.id})}" class="btn btn-info text-right" target="_blank">View</a></td>
+      <td><a th:href="@{/image/delete/{id}(id=${imageSet.id})}" class="btn btn-info text-right" target="_blank">Delete</a></td>
   </tr>
   </tbody>
 </table>

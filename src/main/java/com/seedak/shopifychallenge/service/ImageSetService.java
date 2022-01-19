@@ -25,4 +25,8 @@ public class ImageSetService {
     public Optional<ImageSet> getImageById(int id) {
         return imageSetRepository.findById(id);
     }
+
+    public void deleteImage(int imageid){
+        imageSetRepository.deleteById(imageid);
+    }
 }

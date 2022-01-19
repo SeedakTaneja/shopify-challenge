@@ -140,4 +140,12 @@ public class ImageSetController {
         map.addAttribute("images", images);
         return "images";
     }
+
+    @GetMapping("/image/delete/{id}")
+    String deleteImage(@PathVariable("id") int id){
+        imageSetService.deleteImage(id);
+//        return "redirect:/home";
+        return "redirect:/image/show";
+
+    }
 }
